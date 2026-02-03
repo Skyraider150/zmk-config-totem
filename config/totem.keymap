@@ -177,7 +177,7 @@
 			&kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11
 			&kp C_PREV &sk LGUI &sk LALT &sk LCTRL &kp C_NEXT &kp C_PLAY_PAUSE &kp LEFT &kp DOWN &kp UP &kp RIGHT
 			&kp F1 &kp C_AC_BACK &kp LC(HU_X) &kp LC(HU_C) &kp LC(HU_V) &kp C_AC_FORWARD &kp C_AC_REFRESH &kp HOME &kp PG_DN &kp PG_UP &kp END &kp F12
-			&kp ESC &kp LSHIFT &kp ENTER &none &none &trans
+			&tog FUNNAV &kp LSHIFT &kp ENTER &none &none &trans
                         >;
                 };
                 
@@ -217,7 +217,7 @@
 			&kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11
 			&kp C_PREV &sk LCTRL &sk LALT &sk LGUI &kp C_NEXT &kp C_PLAY_PAUSE &kp LEFT &kp DOWN &kp UP &kp RIGHT
 			&kp F1 &kp C_AC_BACK &kp LG(HU_X) &kp LG(HU_C) &kp LG(HU_V) &kp C_AC_FORWARD &kp C_AC_REFRESH &kp LC(LEFT) &kp PG_DN &kp PG_UP &kp LC(RIGHT) &kp F12
-			&kp ESC &kp LSHIFT &kp ENTER &none &none &trans
+			&tog FUNNAV_MAC &kp LSHIFT &kp ENTER &none &none &trans
                         >;
                 };
                 
@@ -237,7 +237,7 @@
 			&none &teams_leave &teams_sound &teams_camera &none &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4
 			&mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &mkp LCLK &none &bt BT_PRV &bt BT_NXT &bt BT_CLR &bt BT_CLR_ALL
 			&none &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &mkp RCLK &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none
-			&trans &none &none &trans &trans &kp RALT
+			&trans &none &none &trans &trans &tog BTMOUSE
                         >;
                 };
         };
