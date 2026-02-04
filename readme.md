@@ -4,7 +4,7 @@
   <img alt="TOTEM logo font" src="/docs/images/TOTEM_logo_bright.svg">
 </picture>
 
-# Five-layer Totem with Ipad Support
+# Five-layer Hungarian Totem
 
 **This is a fork or GEIGEIGEIST's Totem**
 
@@ -22,12 +22,14 @@ TOTEM is a 38 key column-staggered split keyboard running [ZMK](https://zmk.dev/
 
 ### General Principles
 
-### BASE
+- Support Hungarian typing.
 
-### NUMCTRL
+### Base Layer
 
-### FUNNAV
+### NumCtrl Layer
 
-### SYM
+### FunNav Layer
 
-### BTMOUSE
+### Sym Layer
+
+### BtMouse Layer
