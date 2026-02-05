@@ -89,7 +89,7 @@ This layer is for mouse emulation and Bluetooth functions.
 - Mouse pointer and scroll control
 - Left and Right Click on thumb keys
 - OSM (including Shift) on the right side bottom row
-- Macros on the right top row
+- Macros on the right top row (Teams commands)
 
 ## Ipad compatiblity
 
