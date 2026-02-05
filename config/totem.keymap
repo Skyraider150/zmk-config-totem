@@ -9,11 +9,12 @@
 #define NUMCTRL  1
 #define FUNNAV  2
 #define SYM  3
-#define BASE_MAC 4
-#define NUMCTRL_MAC 5
-#define FUNNAV_MAC 6
-#define SYM_MAC 7
-#define BTMOUSE 8
+#define BTMOUSE 4
+#define BASE_MAC 5
+#define NUMCTRL_MAC 6
+#define FUNNAV_MAC 7
+#define SYM_MAC 8
+#define BTMOUSE_MAC 9
 
 #define HU_LDQT (RA(HU_O))
 #define HU_RDQT (RA(HU_P))
@@ -190,6 +191,16 @@
 			&trans &trans &trans &trans &trans &kp RALT
                         >;
                 };
+
+        btmouse_layer {
+			label= "BTMOUSE";
+			bindings = <
+			&bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4 &none &teams_leave &teams_sound &teams_camera &none
+			&msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &bt BT_CLR &bt BT_CLR_ALL &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT
+			&bt BT_PRV &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none &sk LCTRL &sk LALT &sk LGUI &sk LSHIFT &bt BT_NXT
+			&trans &none &none &mkp RCLK &mkp LCLK &tog BTMOUSE
+                        >;
+                };
 		
 		base_mac_layer {
 			label= "BASE_MAC";
@@ -197,7 +208,7 @@
 			&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
 			&trans &hml LCTRL HU_R &trans &hml LGUI HU_T &trans &trans &hmr LGUI HU_N &trans &hmr LCTRL HU_I &trans
 			&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-			&lt BTMOUSE ESC &mo NUMCTRL_MAC &lt SYM_MAC ENTER &trans &trans &mo FUNNAV_MAC
+			&lt BTMOUSE_MAC ESC &mo NUMCTRL_MAC &lt SYM_MAC ENTER &trans &trans &mo FUNNAV_MAC
                         >;
                 };
                 
@@ -231,13 +242,13 @@
                         >;
                 };
                 
-        btmouse_layer {
-			label= "BTMOUSE";
+        btmouse_mac_layer {
+			label= "BTMOUSE_MAC";
 			bindings = <
-			&bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4 &none &teams_leave &teams_sound &teams_camera &none
-			&msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &none &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT
-			&none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none &bt BT_PRV &bt BT_NXT &bt BT_CLR &bt BT_CLR_ALL &none
-			&trans &none &none &mkp RCLK &mkp LCLK &tog BTMOUSE
+			&bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4 &none &none &none &none &none
+			&msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &bt BT_CLR &bt BT_CLR_ALL &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT
+			&bt BT_PRV &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none &sk LGUI &sk LALT &sk LCTRL &sk LSHIFT &bt BT_NXT
+			&trans &none &none &mkp RCLK &mkp LCLK &tog BTMOUSE_MAC
                         >;
                 };
         };
