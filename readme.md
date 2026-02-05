@@ -47,7 +47,7 @@ The base layer is Colemak-DH with a few changes / additions:
 This layer is for numbers, accents and commonly used controls
 
 - Backspace and Del is here instead of thumb tap-holds: I often long-press them (no tap-hold) or press them quickly multiple times (thumbs are not good for that)
-- ORM Gui, Alt and Ctrl is present on the left hand for convenience and Callum-style mod use
+- One-Shot Mods (Gui, Alt and Ctrl) is present on the left hand for convenience and Callum-style mod use
 - AltGr on right outer thumb
 - Caps Lock and Caps Word are both enabled
 - Brightness and Volume control
@@ -62,7 +62,7 @@ This layer is for Fn keys and navigation.
 
 - The layer can be locked or unlocked by pressing the opposite outer thumb key
 - Arrow keys and Home/End PgUp/PgDn on right hand for one-handed navigation
-- ORM Mods like on the NumCtrl layer
+- One-Shot Mods like on the NumCtrl layer
 - Shift on opposite side
 - Media controls (Prev, Next, Play/Pause)
 - Browser navigation (Back, Forward, Refresh)
@@ -75,7 +75,7 @@ This layer is for Fn keys and navigation.
 
 This layer is for symbols that cannot be accessed with shift directly.
 
-- ORM Mods like in the NumCtrl layer
+- OSM like in the NumCtrl layer
 - AltGr on right outer thumb
 - Repositioned some symbols for less hand movement
 
@@ -88,7 +88,7 @@ This layer is for mouse emulation and Bluetooth functions.
 - Can be locked or unlocked by opposite outer thumb key
 - Mouse pointer and scroll control
 - Left and Right Click on thumb keys
-- ORM Mods (including Shift) on the right side bottom row
+- OSM (including Shift) on the right side bottom row
 - Macros on the right top row
 
 ## Ipad compatiblity
