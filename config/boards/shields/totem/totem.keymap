@@ -3,16 +3,18 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/behaviors.h>
+#include <keys_hu.h>
 
 #define BASE 0
 #define NUMCTRL  1
 #define FUNNAV  2
 #define SYM  3
-#define BASE_MAC 4
-#define NUMCTRL_MAC 5
-#define FUNNAV_MAC 6
-#define SYM_MAC 7
-#define BTMOUSE 8
+#define BTMOUSE 4
+#define BASE_MAC 5
+#define NUMCTRL_MAC 6
+#define FUNNAV_MAC 7
+#define SYM_MAC 8
+#define BTMOUSE_MAC 9
 
 #define HU_LDQT (RA(HU_O))
 #define HU_RDQT (RA(HU_P))
@@ -156,17 +158,17 @@
 			&kp HU_Q &kp HU_W &kp HU_F &kp HU_P &kp HU_G &kp HU_J &kp HU_L &kp HU_U &kp HU_Z &kp HU_O_UMLAUT
 			&kp HU_A &hml LGUI HU_R &hml LALT HU_S &hml LCTRL HU_T &kp HU_D &kp HU_H &hmr LCTRL HU_N &hmr LALT HU_E &hmr LGUI HU_I &kp HU_O
 			&kp TAB &kp HU_Y &kp HU_X &kp HU_C &kp HU_V &kp HU_B &kp HU_K &kp HU_M &kp HU_COMMA &kp HU_DOT &kp HU_MINUS &kp HU_U_UMLAUT
-			&mo FUNNAV &mo NUMCTRL &lt SYM ENTER &kp RET &kp LSHIFT &lt BTMOUSE
+			&lt BTMOUSE ESC &mo NUMCTRL &lt SYM ENTER &kp RET &kp LSHIFT &mo FUNNAV
 		        >;
 		};
                 
-                numctrl_layer {
+        numctrl_layer {
 			label= "NUMCTRL";
 			bindings = <
-			&to BASE_MAC &sk RALT &kp PRINTSCREEN &kp C_MUTE &kp C_VOLUME_UP &kp BRI_UP &kp DEL &kp HU_U_ACUTE &kp INS &kp HU_O_DOUBLE_ACUTE
+			&to BASE_MAC &caps_word &kp PRINTSCREEN &kp C_MUTE &kp C_VOLUME_UP &kp BRI_UP &kp DEL &kp HU_U_ACUTE &kp INS &kp HU_O_DOUBLE_ACUTE
 			&kp HU_A_ACUTE &sk LGUI &sk LALT &sk LCTRL &kp C_VOLUME_DOWN &kp BRI_DN &kp BSPC &kp HU_E_ACUTE &kp HU_I_ACUTE &kp HU_O_ACUTE
-			&caps_word &kp HU_N0 &kp HU_N1 &kp HU_N2 &kp HU_N3 &kp HU_N4 &kp HU_N5 &kp HU_N6 &kp HU_N7 &kp HU_N8 &kp HU_N9 &kp HU_U_DOUBLE_ACUTE
-			&trans &trans &trans &trans &trans &trans
+			&kp CAPS &kp HU_N0 &kp HU_N1 &kp HU_N2 &kp HU_N3 &kp HU_N4 &kp HU_N5 &kp HU_N6 &kp HU_N7 &kp HU_N8 &kp HU_N9 &kp HU_U_DOUBLE_ACUTE
+			&none &trans &none &trans &trans &kp RALT
                         >;
                 };BT
 		
@@ -174,19 +176,29 @@
 			label= "FUNNAV";
 			bindings = <
 			&kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11
-			&kp C_PREV &sk LGUI &sk LALT &sk LCTRL &kp C_NEXT &kp C_AC_REFRESH &kp LEFT &kp DOWN &kp UP &kp RIGHT
-			&kp F1 &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &kp C_PLAY_PAUSE &kp C_AC_BACK &kp HOME &kp PG_DN &kp PG_UP &kp END &kp F12
-			&trans &trans &trans &trans &trans &trans
+			&kp C_PREV &sk LGUI &sk LALT &sk LCTRL &kp C_NEXT &kp C_PLAY_PAUSE &kp LEFT &kp DOWN &kp UP &kp RIGHT
+			&kp F1 &kp C_AC_BACK &kp LC(HU_X) &kp LC(HU_C) &kp LC(HU_V) &kp C_AC_FORWARD &kp C_AC_REFRESH &kp HOME &kp PG_DN &kp PG_UP &kp END &kp F12
+			&tog FUNNAV &kp LSHIFT &kp ENTER &none &none &trans
                         >;
                 };
                 
-                sym_layer {
+        sym_layer {
 			label= "SYM";
 			bindings = <
 			&kp HU_SECT &kp HU_PIPE &kp HU_CARET &kp HU_PLUS &kp HU_TILDE &kp HU_PERCENT &kp HU_LPAR &kp HU_RPAR &kp HU_EQUAL &kp HU_GRAVE
 			&kp HU_BACKSLASH &sk LGUI &sk LALT &sk LCTRL &kp HU_LBKT &kp HU_RBKT &kp HU_EXCL &kp HU_SEMI &kp HU_SQT &kp HU_DQT
 			&kp HU_LDQT &kp HU_DOLLAR &kp HU_HASH &kp HU_AMPS &kp HU_AT &kp HU_LBRC &kp HU_RBRC &kp HU_LT &kp HU_GT &kp HU_SLASH &kp HU_ASTERISK &kp HU_RDQT
-			&trans &trans &trans &trans &trans &trans
+			&trans &trans &trans &trans &trans &kp RALT
+                        >;
+                };
+
+        btmouse_layer {
+			label= "BTMOUSE";
+			bindings = <
+			&bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4 &none &teams_leave &teams_sound &teams_camera &none
+			&msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &bt BT_CLR &bt BT_CLR_ALL &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT
+			&bt BT_PRV &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none &sk LCTRL &sk LALT &sk LGUI &sk LSHIFT &bt BT_NXT
+			&trans &none &none &mkp RCLK &mkp LCLK &tog BTMOUSE
                         >;
                 };
 		
@@ -196,47 +208,47 @@
 			&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
 			&trans &hml LCTRL HU_R &trans &hml LGUI HU_T &trans &trans &hmr LGUI HU_N &trans &hmr LCTRL HU_I &trans
 			&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-			&mo FUNNAV_MAC &mo NUMCTRL_MAC &lt SYM_MAC ENTER &trans &trans &mo BTMOUSE
+			&lt BTMOUSE_MAC ESC &mo NUMCTRL_MAC &lt SYM_MAC ENTER &trans &trans &mo FUNNAV_MAC
                         >;
                 };
                 
-                numctrl_mac_layer {
+        numctrl_mac_layer {
 			label= "NUMCTRL_MAC";
 			bindings = <
-			&to BASE &sk RALT &kp PRINTSCREEN &kp C_MUTE &kp C_VOLUME_UP &kp BRI_UP &kp DEL &kp HU_U_ACUTE &kp INS &kp HU_O_DOUBLE_ACUTE
+			&to BASE &caps_word &kp PRINTSCREEN &kp C_MUTE &kp C_VOLUME_UP &kp BRI_UP &kp DEL &kp HU_U_ACUTE &kp INS &kp HU_O_DOUBLE_ACUTE
 			&kp HU_A_ACUTE &sk LCTRL &sk LALT &sk LGUI &kp C_VOLUME_DOWN &kp BRI_DN &kp BSPC &kp HU_E_ACUTE &kp HU_N0 &kp HU_O_ACUTE
-			&caps_word &kp HU_I_ACUTE &kp HU_N1 &kp HU_N2 &kp HU_N3 &kp HU_N4 &kp HU_N5 &kp HU_N6 &kp HU_N7 &kp HU_N8 &kp HU_N9 &kp HU_U_DOUBLE_ACUTE
-			&trans &trans &trans &trans &trans &trans
+			&kp CAPS &kp HU_I_ACUTE &kp HU_N1 &kp HU_N2 &kp HU_N3 &kp HU_N4 &kp HU_N5 &kp HU_N6 &kp HU_N7 &kp HU_N8 &kp HU_N9 &kp HU_U_DOUBLE_ACUTE
+			&none &trans &none &trans &trans &kp RALT
                         >;
                 };
                 
-                funnav_mac_layer {
+        funnav_mac_layer {
 			label= "FUNNAV_MAC";
 			bindings = <
 			&kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11
-			&kp C_PREV &sk LCTRL &sk LALT &sk LGUI &kp C_NEXT &kp C_AC_REFRESH &kp LEFT &kp DOWN &kp UP &kp RIGHT
-			&kp F1 &msc SCRL_LEFT &msc SCRL_UP &msc SCRL_DOWN &msc SCRL_RIGHT &kp C_PLAY_PAUSE &kp C_AC_BACK &kp LC(LEFT) &kp PG_DN &kp PG_UP &kp LC(RIGHT) &kp F12
-			&trans &trans &trans &trans &trans &trans
+			&kp C_PREV &sk LCTRL &sk LALT &sk LGUI &kp C_NEXT &kp C_PLAY_PAUSE &kp LEFT &kp DOWN &kp UP &kp RIGHT
+			&kp F1 &kp C_AC_BACK &kp LG(HU_X) &kp LG(HU_C) &kp LG(HU_V) &kp C_AC_FORWARD &kp C_AC_REFRESH &kp LC(LEFT) &kp PG_DN &kp PG_UP &kp LC(RIGHT) &kp F12
+			&tog FUNNAV_MAC &kp LSHIFT &kp ENTER &none &none &trans
                         >;
                 };
                 
-                sym_mac_layer {
+        sym_mac_layer {
 			label= "SYM_MAC";
 			bindings = <
 			&kp HU_MAC_SECT &kp HU_MAC_PIPE &kp HU_MAC_CARET &kp HU_MAC_PLUS &kp HU_MAC_TILDE &kp HU_MAC_PERCENT &kp HU_MAC_LPAR &kp HU_MAC_RPAR &kp HU_MAC_EQUAL &kp HU_MAC_GRAVE
 			&kp HU_MAC_BACKSLASH &sk LCTRL &sk LALT &sk LGUI &kp HU_MAC_LBKT &kp HU_MAC_RBKT &kp HU_MAC_EXCL &kp HU_MAC_SEMI &kp HU_MAC_SQT &kp HU_MAC_DQT
 			&kp HU_MAC_LDQT &kp HU_MAC_DOLLAR &kp HU_MAC_HASH &kp HU_MAC_AMPS &kp HU_MAC_AT &kp HU_MAC_LBRC &kp HU_MAC_RBRC &kp HU_MAC_LT &kp HU_MAC_GT &kp HU_MAC_SLASH &kp HU_MAC_ASTERISK &kp HU_MAC_RDQT
-			&trans &trans &trans &trans &trans &trans
+			&none &none &trans &trans &trans &kp RALT
                         >;
                 };
                 
-                btmouse_layer {
-			label= "BTMOUSE";
+        btmouse_mac_layer {
+			label= "BTMOUSE_MAC";
 			bindings = <
-			&bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4 &none &teams_leave &teams_sound &teams_camera &none
-			&bt BT_PRV &bt BT_NXT &mkp RCLK &mkp LCLK &bt BT_CLR &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT
-			&bt BT_CLR_ALL &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans &mmv MOVE_X(-1200) &mmv MOVE_Y(-1200) &mmv MOVE_Y(1200) &mmv MOVE_X(1200) &none
-			&trans &trans &trans &trans &trans &trans
+			&bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4 &none &none &none &none &none
+			&msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &bt BT_CLR &bt BT_CLR_ALL &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT
+			&bt BT_PRV &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none &sk LGUI &sk LALT &sk LCTRL &sk LSHIFT &bt BT_NXT
+			&trans &none &none &mkp RCLK &mkp LCLK &tog BTMOUSE_MAC
                         >;
                 };
         };
