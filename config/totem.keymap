@@ -3,51 +3,54 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/behaviors.h>
-#include <locale/keys_hu.h>
+#include <dt-bindings/zmk/pointing.h>
+#include <keys_hu.h>
 
 #define BASE 0
-#define NUMCTRL  1
-#define FUNNAV  2
-#define SYM  3
+#define SYM  1
+#define NAVCTRL  2
+#define FNNUM
 #define BTMOUSE 4
-#define BASE_MAC 5
-#define NUMCTRL_MAC 6
-#define FUNNAV_MAC 7
-#define SYM_MAC 8
-#define BTMOUSE_MAC 9
+#define BASE_IPAD 5
+#define SYM_IPAD 6
+#define NAVCTRL_IPAD 7
+#define FNNUM_IPAD 8
+#define BTMOUSE_IPAD 9
 
 #define HU_LDQT (RA(HU_O))
 #define HU_RDQT (RA(HU_P))
+#define HU_EMDASH (RA(HU_Z))
 
-#define HU_MAC_SECT (HU_SECT)
-#define HU_MAC_PIPE (RA(HU_I_ACUTE))
-#define HU_MAC_CARET (RA(HU_A_ACUTE))
-#define HU_MAC_PLUS (HU_PLUS)
-#define HU_MAC_TILDE (RA(HU_U_ACUTE))
-#define HU_MAC_PERCENT (HU_PERCENT)
-#define HU_MAC_LPAR (HU_LPAR)
-#define HU_MAC_RPAR (HU_RPAR)
-#define HU_MAC_EQUAL (HU_EQUAL)
-#define HU_MAC_GRAVE (RA(HU_U_DOUBLE_ACUTE))
-#define HU_MAC_BACKSLASH (RA(HU_U_UMLAUT))
-#define HU_MAC_LBKT (HU_LBKT)
-#define HU_MAC_RBKT (HU_RBKT)
-#define HU_MAC_EXCL (HU_EXCL)
-#define HU_MAC_SEMI (HU_SEMI)
-#define HU_MAC_SQT (HU_SQT)
-#define HU_MAC_DQT (HU_DQT)
-#define HU_MAC_LDQT (RA(HU_V))
-#define HU_MAC_DOLLAR (RA(HU_N4))
-#define HU_MAC_HASH (RA(LS(HU_N3)))
-#define HU_MAC_AMPS (RA(HU_N1))
-#define HU_MAC_AT (RA(HU_Q))
-#define HU_MAC_LBRC (RA(HU_N7))
-#define HU_MAC_RBRC (RA(HU_O_UMLAUT))
-#define HU_MAC_LT (RA(LS(HU_Y)))
-#define HU_MAC_GT (RA(LS(HU_X)))
-#define HU_MAC_SLASH (HU_SLASH)
-#define HU_MAC_ASTERISK (RA(LS(HU_COMMA)))
-#define HU_MAC_RDQT (RA(HU_B))
+#define HU_IPAD_SECT (HU_SECT)
+#define HU_IPAD_PIPE (RA(HU_I_ACUTE))
+#define HU_IPAD_CARET (RA(HU_A_ACUTE))
+#define HU_IPAD_PLUS (HU_PLUS)
+#define HU_IPAD_TILDE (RA(HU_U_ACUTE))
+#define HU_IPAD_PERCENT (HU_PERCENT)
+#define HU_IPAD_LPAR (HU_LPAR)
+#define HU_IPAD_RPAR (HU_RPAR)
+#define HU_IPAD_EQUAL (HU_EQUAL)
+#define HU_IPAD_GRAVE (RA(HU_U_DOUBLE_ACUTE))
+#define HU_IPAD_BACKSLASH (RA(HU_U_UMLAUT))
+#define HU_IPAD_LBKT (HU_LBKT)
+#define HU_IPAD_RBKT (HU_RBKT)
+#define HU_IPAD_EXCL (HU_EXCL)
+#define HU_IPAD_SEMI (HU_SEMI)
+#define HU_IPAD_SQT (HU_SQT)
+#define HU_IPAD_DQT (HU_DQT)
+#define HU_IPAD_LDQT (RA(HU_V))
+#define HU_IPAD_DOLLAR (RA(HU_N4))
+#define HU_IPAD_HASH (RA(LS(HU_N3)))
+#define HU_IPAD_AMPS (RA(HU_N1))
+#define HU_IPAD_AT (RA(HU_Q))
+#define HU_IPAD_LBRC (RA(HU_N7))
+#define HU_IPAD_RBRC (RA(HU_O_UMLAUT))
+#define HU_IPAD_LT (RA(LS(HU_Y)))
+#define HU_IPAD_GT (RA(LS(HU_X)))
+#define HU_IPAD_SLASH (HU_SLASH)
+#define HU_IPAD_ASTERISK (RA(LS(HU_COMMA)))
+#define HU_IPAD_RDQT (RA(HU_B)
+#define HU_IPAD_EMDASH (RA(HU_MINUS))
 
 #define KEYS_L 0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 25 // Left-hand keys.
 #define KEYS_R 5 6 7 8 9 15 16 17 18 19 26 27 28 29 30 31 // Right-hand keys.
@@ -81,39 +84,69 @@
 	
 	combos {
 		compatible = "zmk,combos";
-		combo_em_dash {
+		combo_backspace {
+			timeout-ms = <50>;
+			layers = <BASE BASE_IPAD>;
+			key-positions = <6 7>;
+			bindings = <&kp BACKSPACE>;
+		};
+		combo_delete {
+			timeout-ms = <50>;
+			layers = <BASE BASE_IPAD>;
+			key-positions = <7 8>;
+			bindings = <&kp DEL>;
+		};
+		combo_insert {
+			timeout-ms = <50>;
+			layers = <BASE BASE_IPAD>;
+			key-positions = <8 9>;
+			bindings = <&kp INS>;
+		};
+		combo_exclamation {
+			timeout-ms = <50>;
+			layers = <BASE BASE_IPAD>;
+			key-positions = <27 28>;
+			bindings = <&kp HU_EXCL>;
+		};
+		combo_semicolon {
+			timeout-ms = <50>;
+			layers = <BASE BASE_IPAD>;
+			key-positions = <28 29>;
+			bindings = <&kp HU_SEMI>;
+		};
+		combo_asterisk {
 			timeout-ms = <50>;
 			layers = <BASE>;
 			key-positions = <29 30>;
-			bindings = <&kp RA(HU_Z)>;
+			bindings = <&kp HU_ASTERISK>;
 		};
-		combo_em_dash_mac {
+		combo_asterisk_ipad {
 			timeout-ms = <50>;
-			layers = <BASE_MAC>;
+			layers = <BASE_IPAD>;
 			key-positions = <29 30>;
-			bindings = <&kp LA(HU_MINUS)>;
+			bindings = <&kp HU_IPAD_ASTERISK>;
 		};
 		combo_word_start {
 			timeout-ms = <50>;
-			layers = <FUNNAV>;
+			layers = <NAVCTRL>;
 			key-positions = <27 28>;
 			bindings = <&kp LC(LEFT)>;
 		};
 		combo_word_end {
 			timeout-ms = <50>;
-			layers = <FUNNAV>;
+			layers = <NAVCTRL>;
 			key-positions = <28 29>;
 			bindings = <&kp LC(RIGHT)>;
 		};
 		combo_word_start_mac {
 			timeout-ms = <50>;
-			layers = <FUNNAV_MAC>;
+			layers = <NAVCTRL_IPAD>;
 			key-positions = <27 28>;
 			bindings = <&kp LA(LEFT)>;
 		};
 		combo_word_end_mac {
 			timeout-ms = <50>;
-			layers = <FUNNAV_MAC>;
+			layers = <NAVCTRL_IPAD>;
 			key-positions = <28 29>;
 			bindings = <&kp LA(RIGHT)>;
 		};
@@ -158,37 +191,37 @@
 			&kp HU_Q &kp HU_W &kp HU_F &kp HU_P &kp HU_G &kp HU_J &kp HU_L &kp HU_U &kp HU_Z &kp HU_O_UMLAUT
 			&kp HU_A &hml LGUI HU_R &hml LALT HU_S &hml LCTRL HU_T &kp HU_D &kp HU_H &hmr LCTRL HU_N &hmr LALT HU_E &hmr LGUI HU_I &kp HU_O
 			&kp TAB &kp HU_Y &kp HU_X &kp HU_C &kp HU_V &kp HU_B &kp HU_K &kp HU_M &kp HU_COMMA &kp HU_DOT &kp HU_MINUS &kp HU_U_UMLAUT
-			&lt BTMOUSE ESC &mo NUMCTRL &lt SYM ENTER &kp RET &kp LSHIFT &mo FUNNAV
+			&lt BTMOUSE ESC &mo SYM &lt FNNUM ENTER &kp SPACE &kp LSHIFT &mo NAVCTRL
 		        >;
 		};
-                
-        numctrl_layer {
-			label= "NUMCTRL";
-			bindings = <
-			&to BASE_MAC &caps_word &kp PRINTSCREEN &kp C_MUTE &kp C_VOLUME_UP &kp C_BRI_UP &kp DEL &kp HU_U_ACUTE &kp INS &kp HU_O_DOUBLE_ACUTE
-			&kp HU_A_ACUTE &sk LGUI &sk LALT &sk LCTRL &kp C_VOLUME_DOWN &kp C_BRI_DN &kp BSPC &kp HU_E_ACUTE &kp HU_I_ACUTE &kp HU_O_ACUTE
-			&kp CAPS &kp HU_N0 &kp HU_N1 &kp HU_N2 &kp HU_N3 &kp HU_N4 &kp HU_N5 &kp HU_N6 &kp HU_N7 &kp HU_N8 &kp HU_N9 &kp HU_U_DOUBLE_ACUTE
-			&none &trans &none &trans &trans &kp RALT
-                        >;
-                };
-		
-		funnav_layer {
-			label= "FUNNAV";
-			bindings = <
-			&kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11
-			&kp C_PREV &sk LGUI &sk LALT &sk LCTRL &kp C_NEXT &kp C_PLAY_PAUSE &kp LEFT &kp DOWN &kp UP &kp RIGHT
-			&kp F1 &kp C_AC_BACK &kp LC(HU_X) &kp LC(HU_C) &kp LC(HU_V) &kp C_AC_FORWARD &kp C_AC_REFRESH &kp HOME &kp PG_DN &kp PG_UP &kp END &kp F12
-			&tog FUNNAV &kp LSHIFT &kp ENTER &none &none &trans
-                        >;
-                };
                 
         sym_layer {
 			label= "SYM";
 			bindings = <
-			&kp HU_SECT &kp HU_PIPE &kp HU_CARET &kp HU_PLUS &kp HU_TILDE &kp HU_PERCENT &kp HU_LPAR &kp HU_RPAR &kp HU_EQUAL &kp HU_GRAVE
-			&kp HU_BACKSLASH &sk LGUI &sk LALT &sk LCTRL &kp HU_LBKT &kp HU_RBKT &kp HU_EXCL &kp HU_SEMI &kp HU_SQT &kp HU_DQT
-			&kp HU_LDQT &kp HU_DOLLAR &kp HU_HASH &kp HU_AMPS &kp HU_AT &kp HU_LBRC &kp HU_RBRC &kp HU_LT &kp HU_GT &kp HU_SLASH &kp HU_ASTERISK &kp HU_RDQT
-			&trans &trans &trans &trans &trans &kp RALT
+			&kp HU_SECT &kp HU_LBRC &kp HU_RBRC &kp HU_PLUS &kp HU_CARET &kp HU_PERCENT &kp HU_TILDE &kp HU_U_ACUTE &kp HU_EQUAL &kp HU_O_DOUBLE_ACUTE
+			&kp HU_A_ACUTE &hml LGUI HU_LPAR &hml LALT HU_RPAR &hml LCTRL HU_SQT &kp HU_BACKSLASH &kp HU_SLASH &hmr LCTRL HU_DQT &hmr LALT HU_E_ACUTE &hmr LGUI HU_I_ACUTE &kp HU_O_ACUTE
+			&kp HU_GRAVE &kp HU_HASH &kp HU_LBKT &kp HU_RBKT &kp HU_AT &kp HU_LT &kp HU_GT &kp HU_AMPS &kp HU_PIPE &kp HU_DOLLAR &kp HU_EMDASH &kp HU_U_DOUBLE_ACUTE
+			&none &trans &none &trans &trans &kp RALT
+                        >;
+                };
+		
+	navctrl_layer {
+			label= "NAVCTRL";
+			bindings = <
+			&kp LC(HU_Y) &kp C_PREV &kp C_PLAY_PAUSE &kp C_NEXT &kp C_VOL_UP &kp C_BRI_UP &kp BACKSPACE &kp DEL &kp INS &caps_word
+			&none &kp LGUI &kp LALT &kp LCTRL &kp C_VOL_DN &kp C_BRI_DN &kp LEFT &kp DOWN &kp UP &kp RIGHT
+			&kp CAPSLOCK &kp LC(HU_Z) &kp LC(HU_X) &kp LC(HU_C) &kp LC(HU_V) &kp C_MUTE &kp PRINTSCREEN &kp HOME &kp PG_DN &kp PG_UP &kp END &to BASE_IPAD
+			&tog NAVCTRL &kp LSHIFT &kp ENTER &none &none &trans
+                        >;
+                };
+                
+        fnnum_layer {
+			label= "FNNUM";
+			bindings = <
+			&kp HU_PLUS &kp HU_MINUS &kp HU_ASTERISK &kp HU_SLASH &kp HU_EQUAL &none &kp F1 &kp F2 &kp F3 &kp F4
+			&kp HU_N0 &hml LGUI HU_N1 &hml LALT HU_N2 &hml LCTRL HU_N3 &kp HU_N4 &none &hmr LCTRL F5 &hmr LALT F6 &hmr LGUI F7 &kp F8
+			&none &kp HU_N5 &kp HU_N6 &kp HU_N7 &kp HU_N8 &kp HU_N9 &none &kp F9 &kp F10 &kp F11 &kp F12 &none
+			&trans &trans &trans &trans &trans &sk RALT
                         >;
                 };
 
@@ -196,59 +229,59 @@
 			label= "BTMOUSE";
 			bindings = <
 			&bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4 &none &teams_leave &teams_sound &teams_camera &none
-			&msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &bt BT_CLR &bt BT_CLR_ALL &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT
-			&bt BT_PRV &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none &sk LCTRL &sk LALT &sk LGUI &sk LSHIFT &bt BT_NXT
+			&msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &bt BT_CLR &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT
+			&bt BT_PRV &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &kp LSHIFT &kp LGUI &kp LALT &kp LCTRL &none &bt BT_NXT
 			&trans &none &none &mkp RCLK &mkp LCLK &tog BTMOUSE
                         >;
                 };
 		
-		base_mac_layer {
-			label= "BASE_MAC";
+	base_ipad_layer {
+			label= "BASE_IPAD";
 			bindings = <
 			&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-			&trans &hml LCTRL HU_R &trans &hml LGUI HU_T &trans &trans &hmr LGUI HU_N &trans &hmr LCTRL HU_I &trans
+			&hml GLOBE HU_A &hml LCTRL HU_R &trans &hml LGUI HU_T &trans &trans &hmr LGUI HU_N &trans &hmr LCTRL HU_I &hmr GLOBE HU_O
 			&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-			&lt BTMOUSE_MAC ESC &mo NUMCTRL_MAC &lt SYM_MAC ENTER &trans &trans &mo FUNNAV_MAC
+			&lt BTMOUSE_IPAD ESC &mo SYM_IPAD &lt FNNUM_IPAD ENTER &trans &trans &mo NAVCTRL_IPAD
                         >;
                 };
                 
-        numctrl_mac_layer {
-			label= "NUMCTRL_MAC";
+        sym_ipad_layer {
+			label= "SYM_IPAD";
 			bindings = <
-			&to BASE &caps_word &kp PRINTSCREEN &kp C_MUTE &kp C_VOLUME_UP &kp BRI_UP &kp DEL &kp HU_U_ACUTE &kp INS &kp HU_O_DOUBLE_ACUTE
-			&kp HU_A_ACUTE &sk LCTRL &sk LALT &sk LGUI &kp C_VOLUME_DOWN &kp BRI_DN &kp BSPC &kp HU_E_ACUTE &kp HU_N0 &kp HU_O_ACUTE
-			&kp CAPS &kp HU_I_ACUTE &kp HU_N1 &kp HU_N2 &kp HU_N3 &kp HU_N4 &kp HU_N5 &kp HU_N6 &kp HU_N7 &kp HU_N8 &kp HU_N9 &kp HU_U_DOUBLE_ACUTE
-			&none &trans &none &trans &trans &kp RALT
+			&kp HU_IPAD_SECT &kp HU_IPAD_LBRC &kp HU_IPAD_RBRC &kp HU_IPAD_PLUS &kp HU_IPAD_CARET &kp HU_IPAD_PERCENT &kp HU_IPAD_TILDE &kp HU_U_ACUTE &kp HU_IPAD_EQUAL &kp HU_O_DOUBLE_ACUTE
+			&hml GLOBE HU_A_ACUTE &hml LCTRL HU_IPAD_LPAR &hml LALT HU_IPAD_RPAR &hml LGUI HU_IPAD_SQT &kp HU_IPAD_BACKSLASH &kp HU_IPAD_SLASH &hmr LGUI HU_IPAD_DQT &hmr LALT HU_E_ACUTE &hmr LCTRL HU_I_ACUTE &hmr GLOBE HU_O_ACUTE
+			&kp HU_IPAD_GRAVE &kp HU_IPAD_HASH &kp HU_IPAD_LBKT &kp HU_IPAD_RBKT &kp HU_IPAD_AT &kp HU_IPAD_LT &kp HU_IPAD_GT &kp HU_IPAD_AMPS &kp HU_IPAD_PIPE &kp HU_IPAD_DOLLAR &kp HU_IPAD_EMDASH &kp HU_U_DOUBLE_ACUTE
+			&none &trans &none &trans &trans &sk RALT
                         >;
                 };
                 
-        funnav_mac_layer {
-			label= "FUNNAV_MAC";
+        navctrl_ipad_layer {
+			label= "NAVCTRL_IPAD";
 			bindings = <
-			&kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11
-			&kp C_PREV &sk LCTRL &sk LALT &sk LGUI &kp C_NEXT &kp C_PLAY_PAUSE &kp LEFT &kp DOWN &kp UP &kp RIGHT
-			&kp F1 &kp C_AC_BACK &kp LG(HU_X) &kp LG(HU_C) &kp LG(HU_V) &kp C_AC_FORWARD &kp C_AC_REFRESH &kp LC(LEFT) &kp PG_DN &kp PG_UP &kp LC(RIGHT) &kp F12
-			&tog FUNNAV_MAC &kp LSHIFT &kp ENTER &none &none &trans
+			&kp LG(HU_Y) &kp C_PREV &kp C_PLAY_PAUSE &kp C_NEXT &kp C_VOL_UP &kp C_BRI_UP &kp BACKSPACE &kp DEL &kp INS &caps_word
+			&kp GLOBE &kp LCTRL &kp LALT &kp LGUI &kp C_VOL_DN &kp C_BRI_DN &kp LEFT &kp DOWN &kp UP &kp RIGHT
+			&kp CAPSLOCK &kp LG(HU_Z) &kp LG(HU_X) &kp LG(HU_C) &kp LG(HU_V) &kp C_MUTE &kp PRINTSCREEN &kp LC(LEFT) &kp PG_DN &kp PG_UP &kp LC(RIGHT) &to BASE
+			&tog NAVCTRL_IPAD &kp LSHIFT &kp ENTER &none &none &trans
                         >;
                 };
                 
-        sym_mac_layer {
-			label= "SYM_MAC";
+        fnnum_ipad_layer {
+			label= "FNNUM_IPAD";
 			bindings = <
-			&kp HU_MAC_SECT &kp HU_MAC_PIPE &kp HU_MAC_CARET &kp HU_MAC_PLUS &kp HU_MAC_TILDE &kp HU_MAC_PERCENT &kp HU_MAC_LPAR &kp HU_MAC_RPAR &kp HU_MAC_EQUAL &kp HU_MAC_GRAVE
-			&kp HU_MAC_BACKSLASH &sk LCTRL &sk LALT &sk LGUI &kp HU_MAC_LBKT &kp HU_MAC_RBKT &kp HU_MAC_EXCL &kp HU_MAC_SEMI &kp HU_MAC_SQT &kp HU_MAC_DQT
-			&kp HU_MAC_LDQT &kp HU_MAC_DOLLAR &kp HU_MAC_HASH &kp HU_MAC_AMPS &kp HU_MAC_AT &kp HU_MAC_LBRC &kp HU_MAC_RBRC &kp HU_MAC_LT &kp HU_MAC_GT &kp HU_MAC_SLASH &kp HU_MAC_ASTERISK &kp HU_MAC_RDQT
-			&none &none &trans &trans &trans &kp RALT
+			&kp HU_IPAD_PLUS &kp HU_MINUS &kp HU_IPAD_ASTERISK &kp HU_IPAD_SLASH &kp HU_IPAD_EQUAL &none &kp F1 &kp F2 &kp F3 &kp F4
+			&hml GLOBE HU_N0 &hml LCTRL HU_N1 &hml LALT HU_N2 &hml LGUI HU_N3 &kp HU_N4 &none &hmr LGUI F5 &hmr LALT F6 &hmr LCTRL F7 &hmr GLOBE F8
+			&none &kp HU_N5 &kp HU_N6 &kp HU_N7 &kp HU_N8 &kp HU_N9 &none &kp F9 &kp F10 &kp F11 &kp F12 &none
+			&trans &trans &trans &trans &trans &sk RALT
                         >;
                 };
                 
-        btmouse_mac_layer {
-			label= "BTMOUSE_MAC";
+        btmouse_ipad_layer {
+			label= "BTMOUSE_IPAD";
 			bindings = <
 			&bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4 &none &none &none &none &none
-			&msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &bt BT_CLR &bt BT_CLR_ALL &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT
-			&bt BT_PRV &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none &sk LGUI &sk LALT &sk LCTRL &sk LSHIFT &bt BT_NXT
-			&trans &none &none &mkp RCLK &mkp LCLK &tog BTMOUSE_MAC
+			&msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &bt BT_CLR &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT
+			&bt BT_PRV &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &kp LSHIFT &kp LGUI &kp LALT &kp LCTRL &kp GLOBE &bt BT_NXT
+			&trans &none &none &mkp RCLK &mkp LCLK &tog BTMOUSE_IPAD
                         >;
                 };
         };
