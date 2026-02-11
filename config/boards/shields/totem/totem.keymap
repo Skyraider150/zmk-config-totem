@@ -170,7 +170,7 @@
 			&kp CAPS &kp HU_N0 &kp HU_N1 &kp HU_N2 &kp HU_N3 &kp HU_N4 &kp HU_N5 &kp HU_N6 &kp HU_N7 &kp HU_N8 &kp HU_N9 &kp HU_U_DOUBLE_ACUTE
 			&none &trans &none &trans &trans &kp RALT
                         >;
-                };BT
+                };
 		
 		funnav_layer {
 			label= "FUNNAV";
