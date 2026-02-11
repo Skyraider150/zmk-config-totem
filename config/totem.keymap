@@ -9,7 +9,7 @@
 #define BASE 0
 #define SYM  1
 #define NAVCTRL  2
-#define FNNUM
+#define FNNUM 3
 #define BTMOUSE 4
 #define BASE_IPAD 5
 #define SYM_IPAD 6
