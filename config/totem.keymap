@@ -165,8 +165,8 @@
         numctrl_layer {
 			label= "NUMCTRL";
 			bindings = <
-			&to BASE_MAC &caps_word &kp PRINTSCREEN &kp C_MUTE &kp C_VOLUME_UP &kp BRI_UP &kp DEL &kp HU_U_ACUTE &kp INS &kp HU_O_DOUBLE_ACUTE
-			&kp HU_A_ACUTE &sk LGUI &sk LALT &sk LCTRL &kp C_VOLUME_DOWN &kp BRI_DN &kp BSPC &kp HU_E_ACUTE &kp HU_I_ACUTE &kp HU_O_ACUTE
+			&to BASE_MAC &caps_word &kp PRINTSCREEN &kp C_MUTE &kp C_VOLUME_UP &kp C_BRI_UP &kp DEL &kp HU_U_ACUTE &kp INS &kp HU_O_DOUBLE_ACUTE
+			&kp HU_A_ACUTE &sk LGUI &sk LALT &sk LCTRL &kp C_VOLUME_DOWN &kp C_BRI_DN &kp BSPC &kp HU_E_ACUTE &kp HU_I_ACUTE &kp HU_O_ACUTE
 			&kp CAPS &kp HU_N0 &kp HU_N1 &kp HU_N2 &kp HU_N3 &kp HU_N4 &kp HU_N5 &kp HU_N6 &kp HU_N7 &kp HU_N8 &kp HU_N9 &kp HU_U_DOUBLE_ACUTE
 			&none &trans &none &trans &trans &kp RALT
                         >;
