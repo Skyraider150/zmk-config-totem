@@ -34,6 +34,7 @@ TOTEM is a 38 key column-staggered split keyboard running [ZMK](https://zmk.dev/
 The base layer is Colemak-DH with a few changes / additions:
 
 - Z and Y swapped
+- K and H swapped
 - Ö, Ü and Tab added
 - Homerow mods, except Shift, which is a thumb key without tap-hold
 - Esc and Space are Tap-hold layer keys
