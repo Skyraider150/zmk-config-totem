@@ -115,7 +115,7 @@
 			timeout-ms = <50>;
 			layers = <FUNNAV_MAC>;
 			key-positions = <28 29>;
-			bindings = <&kp LA(RIGTH)>;
+			bindings = <&kp LA(RIGHT)>;
 		};
     	};
 
