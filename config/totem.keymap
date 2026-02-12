@@ -249,7 +249,7 @@
 			label= "SYM_IPAD";
 			bindings = <
 			&kp HU_IPAD_SECT &kp HU_IPAD_LBRC &kp HU_IPAD_RBRC &kp HU_IPAD_PLUS &kp HU_IPAD_CARET &kp HU_IPAD_PERCENT &kp HU_IPAD_TILDE &kp HU_U_ACUTE &kp HU_IPAD_EQUAL &kp HU_O_DOUBLE_ACUTE
-			&hml GLOBE HU_A_ACUTE &hml LCTRL HU_IPAD_LPAR &hml LALT HU_IPAD_RPAR &hml LGUI HU_IPAD_SQT &kp HU_IPAD_BACKSLASH &kp HU_IPAD_SLASH &hmr LGUI HU_IPAD_DQT &hmr LALT HU_E_ACUTE &hmr LCTRL HU_I_ACUTE &hmr GLOBE HU_O_ACUTE
+			&hml GLOBE HU_A_ACUTE &hml LCTRL HU_IPAD_LPAR &hml LALT HU_IPAD_RPAR &hml LGUI HU_IPAD_SQT &kp HU_IPAD_BACKSLASH &kp HU_IPAD_SLASH &hmr LGUI HU_IPAD_DQT &hmr LALT HU_E_ACUTE &hmr LCTRL HU_N0 &hmr GLOBE HU_O_ACUTE
 			&kp HU_IPAD_GRAVE &kp HU_IPAD_HASH &kp HU_IPAD_LBKT &kp HU_IPAD_RBKT &kp HU_IPAD_AT &kp HU_IPAD_LT &kp HU_IPAD_GT &kp HU_IPAD_AMPS &kp HU_IPAD_PIPE &kp HU_IPAD_DOLLAR &kp HU_IPAD_EMDASH &kp HU_U_DOUBLE_ACUTE
 			&none &trans &none &trans &trans &sk RALT
                         >;
@@ -269,7 +269,7 @@
 			label= "FNNUM_IPAD";
 			bindings = <
 			&kp HU_IPAD_PLUS &kp HU_MINUS &kp HU_IPAD_ASTERISK &kp HU_IPAD_SLASH &kp HU_IPAD_EQUAL &none &kp F1 &kp F2 &kp F3 &kp F4
-			&hml GLOBE HU_N0 &hml LCTRL HU_N1 &hml LALT HU_N2 &hml LGUI HU_N3 &kp HU_N4 &none &hmr LGUI F5 &hmr LALT F6 &hmr LCTRL F7 &hmr GLOBE F8
+			&hml GLOBE HU_I_ACUTE &hml LCTRL HU_N1 &hml LALT HU_N2 &hml LGUI HU_N3 &kp HU_N4 &none &hmr LGUI F5 &hmr LALT F6 &hmr LCTRL F7 &hmr GLOBE F8
 			&none &kp HU_N5 &kp HU_N6 &kp HU_N7 &kp HU_N8 &kp HU_N9 &none &kp F9 &kp F10 &kp F11 &kp F12 &none
 			&trans &trans &trans &trans &trans &sk RALT
                         >;
