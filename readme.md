@@ -36,7 +36,8 @@ The base layer is Colemak-DH with a few changes / additions:
 - Z and Y swapped
 - K and H swapped
 - Ö, Ü and Tab added
-- Homerow mods, except Shift, which is a thumb key without tap-hold
+- Homerow mods, without Shift
+- Shift on right thumb, with tap-dance: double tap is CapsWord, triple tap is CapsLock
 - Esc and Space are Tap-hold layer keys
 - Sym and NavCtrl layers do not have tap-hold
 - Combos for BKSP, DEL and INS
