@@ -311,7 +311,7 @@
 			bindings = <
 			&none &kp C_PREV &kp C_PLAY_PAUSE &kp C_NEXT &kp C_VOL_UP &kp C_BRI_UP &kp BACKSPACE &kp DEL &kp INS &none
 			&kp GLOBE &kp LCTRL &kp LALT &kp LGUI &kp C_VOL_DN &kp C_BRI_DN &kp LEFT &kp DOWN &kp UP &kp RIGHT
-			&kp LG(HU_Y) &kp LG(HU_Z) &kp LG(HU_X) &kp LG(HU_C) &kp LG(HU_V) &kp C_MUTE &kp PRINTSCREEN &kp LC(LEFT) &kp PG_DN &kp PG_UP &kp LC(RIGHT) &to BASE
+			&kp LS(LG(HU_Z)) &kp LG(HU_Z) &kp LG(HU_X) &kp LG(HU_C) &kp LG(HU_V) &kp C_MUTE &kp PRINTSCREEN &kp LC(LEFT) &kp PG_DN &kp PG_UP &kp LC(RIGHT) &to BASE
 			&tog NAVCTRL_IPAD &td0 &kp ENTER &none &none &trans
                         >;
                 };
