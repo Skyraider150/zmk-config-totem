@@ -38,22 +38,28 @@ The base layer is Colemak-DH with a few changes / additions:
 - Ö, Ü and Tab added
 - Homerow mods, without Shift
 - Shift on right thumb, with tap-dance: double tap is CapsWord, triple tap is CapsLock
-- Esc and Space are Tap-hold layer keys
-- Sym and NavCtrl layers do not have tap-hold
-- Combos for BKSP, DEL and INS
-- Combos for "!", ";" and "*"
+- Esc and Enter are Tap-hold layer keys
+- SymNum and NavCtrl layers do not have tap-hold
+- Combos for most commonly used symbols:
+  - Left upper row: ', " and +
+  - Left lower row: =, (, ), @
+  - Right upper row: Backspace and Delete
+  - Right lower row: Em-dash, !, ; and *
+  - Middle row: \ and /
 
-### Sym Layer
+### Symbols-Numbers Layer
 
-![sym](/docs/images/sym.png)
+![symnum](/docs/images/symnum.png)
 
-This layer is for accents and symbols
+This layer is for accents, numbers and symbols not on the base layer
 
+- Acutes and double acutes under their non-acute counterparts
 - All symbols except the ones on base layer
+- Numbers on left side for one-handed typing
 - Homerow mods are duplicated here
 - Sticky AltGr on right outer thumb
 
-### NavCtrl Layer
+### Navigation-Controls Layer
 
 ![navctrl](/docs/images/navctrl.png)
 
@@ -67,32 +73,34 @@ This layer is for navigation and controls.
 - Cut, Copy and Paste for convenience when layer is locked
 - Combos for jumping one word forward and backward
 
-### FnNum Layer
+### Function-Bluetooth Layer
 
-![fnnum](/docs/images/fnnum.png)
+![fnbt](/docs/images/fnbt.png)
 
 This layer is for numbers and F-keys.
 
-- Numbers on left side for one-handed typing.
-- Math symbols on top row for easy access.
-- F-keys on right side.
-- Sticky AltGr on right outer thumb.
+- Mods on the left side
+- F-keys on right side
+- Sticky AltGr on right outer thumb
+- Bluetooth functions on the left side
 
-### BtMouse Layer 
+### Mouse Layer 
 
-![btmouse](/docs/images/btmouse.png)
+![mouse](/docs/images/mouse.png)
 
-This layer is for mouse emulation and Bluetooth functions.
+This layer is for mouse emulation and macros.
 
 - Can be locked or unlocked by opposite outer thumb key
 - Mouse pointer and scroll control
 - Left and Right Click on thumb keys
 - Mods (including Shift) on the right side bottom row
-- Macros on the right top row (Teams commands)
+- Macros on the right bottom row
 
 ## Ipad compatiblity
 
 Ipad_ activates or deactivates Base_ layer. Every layer has a corresponding Ipad layer (followed by a _) that works in Ipad Mode.
+
+Some Bluetooth profiles are also configured to switch to Ipad mode (or back to Base mode). Currently, BT0 and BT2 are configured as Ipad mode profiles, and the rest as normal profiles.
 
 ### Differences
 
