@@ -81,13 +81,13 @@
 		combo_backspace {
 			timeout-ms = <50>;
 			layers = <BASE BASE_IPAD>;
-			key-positions = <6 7>;
+			key-positions = <16 17>;
 			bindings = <&kp BACKSPACE>;
 		};
 		combo_delete {
 			timeout-ms = <50>;
 			layers = <BASE BASE_IPAD>;
-			key-positions = <7 8>;
+			key-positions = <17 18>;
 			bindings = <&kp DEL>;
 		};
 		
@@ -95,19 +95,19 @@
 		combo_single_quote {
 			timeout-ms = <50>;
 			layers = <BASE BASE_IPAD>;
-			key-positions = <1 2>;
+			key-positions = <10 11>;
 			bindings = <&kp HU_SQT>;
 		};
 		combo_double_quote {
 			timeout-ms = <50>;
 			layers = <BASE BASE_IPAD>;
-			key-positions = <2 3>;
+			key-positions = <11 12>;
 			bindings = <&kp HU_DQT>;
 		};
 		combo_plus {
 			timeout-ms = <50>;
 			layers = <BASE BASE_IPAD>;
-			key-positions = <3 4>;
+			key-positions = <12 13>;
 			bindings = <&kp HU_PLUS>;
 		};
 
