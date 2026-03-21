@@ -90,6 +90,19 @@
 			key-positions = <17 18>;
 			bindings = <&kp DEL>;
 		};
+
+		combo_reset {
+			timeout-ms = <50>;
+			layers = <FNBT FNBT_IPAD>;
+			key-positions = <0 9>;
+			bindings = <&sys_reset>;
+		};
+		combo_boot {
+			timeout-ms = <50>;
+			layers = <FNBT FNBT_IPAD>;
+			key-positions = <20 31>;
+			bindings = <&bootloader>;
+		};
 		
         // Symbols
 		combo_single_quote {
