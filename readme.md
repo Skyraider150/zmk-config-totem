@@ -38,14 +38,15 @@ The base layer is Colemak-DH with a few changes / additions:
 - Ö, Ü and Tab added
 - Homerow mods, without Shift
 - Shift on right thumb, with tap-dance: double tap is CapsWord, triple tap is CapsLock
-- Esc and Enter are Tap-hold layer keys
-- SymNum and NavCtrl layers do not have tap-hold
+- Enter is a Tap-hold layer key
+- NavCtrl and Mouse layers are toggled by press and momentarily activated when held
 - Combos for most commonly used symbols:
-  - Left upper row: ', " and +
-  - Left lower row: =, (, ), @
-  - Right upper row: Backspace and Delete
-  - Right lower row: Em-dash, !, ; and *
-  - Middle row: \ and /
+  - Left upper row: +
+  - Left middle row: ', ", \
+  - Left lower row:  Esc, (, ), @
+  - Right upper row: =
+  - Right middle row: /, Backspace, Delete
+  - Right lower row: Em-dash, !, ;, *
 
 ### Symbols-Numbers Layer
 
@@ -65,7 +66,7 @@ This layer is for accents, numbers and symbols not on the base layer
 
 This layer is for navigation and controls.
 
-- The layer can be locked or unlocked by pressing the opposite outer thumb key
+- The layer can be unlocked by pressing the opposite outer thumb key
 - Arrow keys and Home/End PgUp/PgDn on right hand for one-handed navigation
 - Mods are on the left side
 - Shift on opposite side
@@ -90,7 +91,7 @@ This layer is for numbers and F-keys.
 
 This layer is for mouse emulation and macros.
 
-- Can be locked or unlocked by opposite outer thumb key
+- Can be unlocked by opposite outer thumb key
 - Mouse pointer and scroll control
 - Left and Right Click on thumb keys
 - Mods (including Shift) on the right side bottom row
