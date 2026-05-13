@@ -152,6 +152,19 @@
 			bindings = <&kp HU_IPAD_BACKSLASH>;
 		};
 
+		combo_u_umlaut {
+			timeout-ms = <50>;
+			layers = <BASE BASE_IPAD>;
+			key-positions = <18 19>;
+			bindings = <&kp HU_U_UMLAUT>;
+		};
+		combo_u_double_acute {
+			timeout-ms = <50>;
+			layers = <SYMNUM SYMNUM_IPAD>;
+			key-positions = <18 19>;
+			bindings = <&kp HU_U_DOUBLE_ACUTE>;
+		};
+
 		combo_slash {
 			timeout-ms = <50>;
 			layers = <BASE BASE_IPAD>;
